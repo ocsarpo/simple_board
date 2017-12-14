@@ -1,0 +1,14 @@
+<hr>
+<h1>게시글 목록</h1>
+<%@Posts.each do |post|%>
+<div class="card">
+  <div class="card-body">
+    제목 : <%=post.title%><br>
+    글쓴이 : <%=post.writer%><br>
+    내용 : <%=post.content%><br>
+    작성시간 : <%=post.created_at.strftime("%Y/%m/%d %H:%M")%>
+    <a href="/destory/<%=post.id%>">[삭제]</a>
+    <a href="/edit/<%=post.id%>">[수정]</a>
+  </div>
+</div>
+<% end %>
